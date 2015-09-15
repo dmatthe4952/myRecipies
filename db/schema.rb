@@ -23,14 +23,14 @@ ActiveRecord::Schema.define(version: 20150914214909) do
   create_table "comments", force: true do |t|
     t.string   "commenter"
     t.text     "body"
-    t.integer  "article_id"
+    t.integer  "recipe_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "comments", ["article_id"], name: "index_comments_on_article_id"
 
-  create_table "recipies", force: true do |t|
+  create_table "recipes", force: true do |t|
     t.string   "title"
     t.text     "text"
     t.integer  "chef_id"
@@ -38,6 +38,6 @@ ActiveRecord::Schema.define(version: 20150914214909) do
     t.datetime "updated_at"
   end
 
-  add_index "recipies", ["chef_id"], name: "index_recipies_on_chef_id"
+  add_index "recipes", ["chef_id"], name: "index_recipes_on_chef_id"
 
 end

@@ -1,4 +1,4 @@
-class Recipie < ActiveRecord::Base
+class Recipe < ActiveRecord::Base
   has_many :comments, dependent: :destroy
   belongs_to :chef
   validates :title, presence: true,

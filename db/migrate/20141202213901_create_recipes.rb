@@ -1,6 +1,6 @@
-class CreateRecipies < ActiveRecord::Migration
+class CreateRecipes < ActiveRecord::Migration
   def change
-    create_table :recipies do |t|
+    create_table :recipes do |t|
       t.string :title
       t.text :text
       t.references :chef, index: true, foreign_key: true
