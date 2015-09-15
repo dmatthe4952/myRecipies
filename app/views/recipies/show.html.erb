@@ -1,0 +1,18 @@
+<p>
+  <strong>Title:</strong>
+  <%= @recipie.title %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @recipie.text %>
+</p>
+
+<h2>Comments</h2>
+<%= render @recipie.comments %>
+
+<h2>Add a comment:</h2>
+<%= render "comments/form" %>
+
+<%= link_to 'Back', recipies_path %>
+| <%= link_to 'Edit', edit_recipie_path(@recipie) %>

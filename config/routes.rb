@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  resources :articles do
+  resources :recipies do
     resources :comments
   end
  
