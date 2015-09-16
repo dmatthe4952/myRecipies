@@ -20,16 +20,6 @@ ActiveRecord::Schema.define(version: 20150914214909) do
     t.datetime "updated_at"
   end
 
-  create_table "comments", force: true do |t|
-    t.string   "commenter"
-    t.text     "body"
-    t.integer  "recipe_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "comments", ["recipe_id"], name: "index_comments_on_recipe_id"
-
   create_table "recipes", force: true do |t|
     t.string   "name"
     t.text     "summary"
