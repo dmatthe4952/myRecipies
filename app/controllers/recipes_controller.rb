@@ -8,11 +8,13 @@ class RecipesController < ApplicationController
   
   def create
     @recipe = Recipe.new(recipe_params)
+    @recipe.chef = Chef.find(2)
     
     if @recipe.save
-      redirect_to @recipe
+      flash[:success] = "Your recipe was successfully created!"
+      redirect_to recipes_path
     else
-      render 'new'
+      render :new
     end
   end
   
@@ -47,6 +49,6 @@ class RecipesController < ApplicationController
   
   private
     def recipe_params
-      params.require(:recipe).permit(:title, :text)
+      params.require(:recipe).permit(:name, :summary, :description)
     end
 end

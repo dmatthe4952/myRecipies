@@ -1,18 +1,21 @@
-<p>
-  <strong>Title:</strong>
-  <%= @recipe.title %>
-</p>
-
-<p>
-  <strong>Text:</strong>
-  <%= @recipe.text %>
-</p>
-
-<h2>Comments</h2>
-<%= render @recipe.comments %>
-
-<h2>Add a comment:</h2>
-<%= render "comments/form" %>
+    <div class="row">
+      
+      <div class="well col-lg-8">
+        <h5><%=  @recipe.name %></h5>
+        <p><%= @recipe.summary %></p>
+        <p><%=@recipe.description %></p>
+        <p>
+          <span class="quiet"><small><%= time_ago_in_words(@recipe.updated_at) %> ago</small></span>
+        </p>
+      </div>
+      
+      <div class=col-md-2>
+        <section class="chef_info center"  %>
+          <%= gravatar_for @recipe.chef size: 100 %>
+          <h5> By: <%= @recipe.chef.chefname %> </h5>
+        </section>
+      </div>
+    </div>
 
 <%= link_to 'Back', recipes_path %>
-| <%= link_to 'Edit', edit_recipe_path(@recipe) %>
+<%= link_to 'Edit', edit_recipe_path(@recipe) %>
