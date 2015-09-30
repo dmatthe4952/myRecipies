@@ -46,6 +46,15 @@ body {
   text-align: center;
 }
 
+.gravatar { 
+  border-radius: 10px;
+  
+}
+
+.chef-info {
+  margin-top: 10px;
+}
+
 h1 h2 h3 h4 {
   line-height: 1;
 }
@@ -75,7 +84,7 @@ h2 {
   background: #eaeded;
 }
 
-input, textarea, select, uneditable-input {
+input, textarea, select, .uneditable-input {
   border: 1px solid #d2d2d2;
   border-radius: 5px;
   margin-bottom: 15px;
@@ -91,4 +100,15 @@ input{
   background: #ededed;
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+span.picture {
+  margin-top: 10px;
+  input {
+    border: 0;
+  }
+}
+
+.show_recipe {
+  margin: 10px 10px 10px 10px;
 }
