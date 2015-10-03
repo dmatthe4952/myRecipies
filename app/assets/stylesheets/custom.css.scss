@@ -3,8 +3,8 @@ $light-orange: #ff8c00;
 $navbar-default-color: $light-orange;
 
 
-@import "bootstrap-sprockets";
 @import "bootstrap"; 
+@import "bootstrap-sprockets";
 
 #logo {
   margin-top: 10px;
