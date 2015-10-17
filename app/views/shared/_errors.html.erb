@@ -1,12 +1,13 @@
-  <% if @recipe.errors.any? %>
+<% if obj.errors.any? %>
     <div id="error_explanation" class="alert-danger col-md-8 col-md-offset-2">
-      <h5><%= pluralize(@recipe.errors.count, "error") %> prohibited
+      <h5><%= pluralize(obj.errors.count, "error") %> prohibited
           this recipe from being saved:
       </h5>
       <ul>
-        <% @recipe.errors.full_messages.each do |msg| %>
+        <% obj.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
         <% end %>
       </ul>
     </div>
-  <% end %>
+    
+<%end%>

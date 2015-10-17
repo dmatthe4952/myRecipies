@@ -1,17 +1,25 @@
- <%= render 'shared/page_title', title: 'Recipes' %>
+<%= render 'shared/page_title', title: 'Chef: ' + @chef.chefname %>
+<div class='row'>
+  <div class="col-md-4 col-md-offset-4 center">
+    <div class="chef_info center gravatar"  %>
+     <%= gravatar_for @chef, size: 200 %>
+     </hr>
+    </div>
+  </div>
+</div>
 
-  <%= will_paginate %>
+<div class='row'>
+  <div class= 'col-md-4 col-md-offset-4 center'>
+    <h5>
+      Recipes:
+    </h5>
+    <%= will_paginate @recipes %>
+  </div>
+</div>
+
   <% @recipes.each do |recipe| %>
     <div class="row">
-      
-      <div class=col-md-2>
-        <section class="chef_info center gravatar" >
-          <%= link_to gravatar_for( recipe.chef size: 100), chef_path(recipe.chef) %>
-          <h5> By: <%= recipe.chef.chefname %> </h5>
-        </section>
-      </div>
-      
-      <div class="well col-lg-6">
+      <div class="well col-lg-6 col-lg-offset-3">
         <h5><%= link_to recipe.name, recipe_path(recipe) %></h5>
         <p><%= recipe.summary %></p>
         <p>
@@ -25,12 +33,6 @@
             <i class='glyphicon glyphicon-thumbs-down'></i> &nbsp <%=recipe.thumbs_down_total %>
           <% end %>
         </div>
-
-      </div>
-      
-      <div class="col-md-4">
-        <%=image_tag(recipe.picture.url, size: "250x150", class: "gravatar") if recipe.picture? %>
       </div>
     </div>
-  <% end %>
-  <%= will_paginate %>
+  <%end%>
