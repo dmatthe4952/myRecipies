@@ -8,5 +8,7 @@ class Chef < ActiveRecord::Base
   
   has_secure_password
   
-  
+  def password_is
+    self.password_digest
+  end
 end
