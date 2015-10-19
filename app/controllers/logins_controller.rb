@@ -6,6 +6,7 @@ class LoginsController < ApplicationController
   
   def create
     chef = Chef.find_by(email: params[:email])
+    Rails.logger.info("\n#{chef.inspect}\n#{params[:password}")
     if chef && chef.authenticate(params[:password])
       session[:chef_id] = chef.id
       flash.now[:success] = "You are logged in"
