@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151003193623) do
+ActiveRecord::Schema.define(version: 20151020092444) do
 
   create_table "chefs", force: true do |t|
     t.string   "chefname"
@@ -21,10 +21,30 @@ ActiveRecord::Schema.define(version: 20151003193623) do
     t.string   "password_digest"
   end
 
+  create_table "ingredients", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "likes", force: true do |t|
     t.boolean  "like"
     t.integer  "chef_id"
     t.integer  "recipe_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "recipe_ingredients", force: true do |t|
+    t.integer  "recipe_id"
+    t.integer  "ingredient_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "recipe_styles", force: true do |t|
+    t.integer  "recipe_id"
+    t.integer  "style_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -40,5 +60,11 @@ ActiveRecord::Schema.define(version: 20151003193623) do
   end
 
   add_index "recipes", ["chef_id"], name: "index_recipes_on_chef_id"
+
+  create_table "styles", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
