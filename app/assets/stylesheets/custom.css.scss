@@ -28,6 +28,11 @@ $navbar-default-color: $light-orange;
   margin-top: 20px;
   margin-right: 25px;
 }
+.nav-ul-item {
+  float: left;
+  padding-left: 20px;
+  margin-top: 25px;
+}
 
 body {
   margin-top: 80px;
@@ -47,7 +52,6 @@ body {
 
 .gravatar { 
   border-radius: 10px;
-  
 }
 
 .chef-info {
@@ -110,4 +114,8 @@ span.picture {
 
 .show_recipe {
   margin: 10px 10px 10px 10px;
+}
+
+.checkbox-block-inline {
+  padding: 20px;
 }
