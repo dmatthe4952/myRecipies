@@ -76,7 +76,7 @@ class RecipesController < ApplicationController
     
     def require_user_like
     if !current_user
-      flash[:danger] = "You must be logged in"
+      flash[:danger] = "You must be logged in to perform that"
       redirect_to :back
     end
   end
