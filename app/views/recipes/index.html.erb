@@ -1,5 +1,5 @@
  <%= render 'shared/page_title', title: 'Recipes' %>
- 
+
  <ul class= 'nav nav-tabs'>
    <li class='active' >
      <%= link_to "Recipes", recipes_path %>
@@ -12,19 +12,23 @@
   <%= will_paginate %>
   <% @recipes.each do |recipe| %>
     <div class="row">
-      
+
       <div class=col-md-2>
         <section class="chef_info center gravatar" >
           <%= link_to gravatar_for( recipe.chef size: 100), chef_path(recipe.chef) %>
           <h5> By: <%= recipe.chef.chefname %> </h5>
         </section>
       </div>
-      
+
       <div class="well col-lg-6">
         <h5><%= link_to recipe.name, recipe_path(recipe) %></h5>
         <p><%= recipe.summary %></p>
-        <p>Style: <%= render recipe.styles %></p>
-        <p>Ingredients: <%= render recipe.ingredients %></p>
+        <% if recipe.style %>
+          <p>Style: <%= render recipe.styles %></p>
+        <%end%>
+        <% if recipe.ingredient %>
+          <p>Ingredients: <%= render recipe.ingredients %></p>
+        <%end%>
         <p>
           <span class="quiet"><small><%= time_ago_in_words(recipe.created_at) %> ago</small></span>
           <span class="quiet"><small><%= time_ago_in_words(recipe.updated_at) %> ago</small></span>
@@ -39,7 +43,7 @@
         </div>
 
       </div>
-      
+
       <div class="col-md-4">
         <%=image_tag(recipe.picture.url, size: "250x150", class: "gravatar") if recipe.picture? %>
       </div>
