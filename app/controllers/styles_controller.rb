@@ -7,7 +7,7 @@ class StylesController < ApplicationController
   end
 
   def new
-    @recipe = Recipe.find(4)
+    # @recipe = Recipe.find(4)
     @style = Style.new
   end
   
