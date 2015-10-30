@@ -6,9 +6,12 @@
      <h5> By: <%= @recipe.chef.chefname %> </h5>
   </div>
   <div class="col-md-8">
-    <% if logged_in? and @recipe.chef == current_user %>
+    <% if logged_in? and ((@recipe.chef == current_user) || (current_user.admin?)) %>
       <%= link_to 'Edit Recipe', edit_recipe_path, class: "btn btn-success btn-small pull-right" %>
     <% end %>
+    <% if current_user.admin? %>
+      <%= link_to '[Delete Recipe]', @recipe, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%end%>
     <h3><%= @recipe.summary %></h3>
     <% if @recipe.styles.any? %>
       <p>Style: <%= render @recipe.styles %></p>
