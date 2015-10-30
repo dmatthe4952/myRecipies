@@ -23,10 +23,10 @@
       <div class="well col-lg-6">
         <h5><%= link_to recipe.name, recipe_path(recipe) %></h5>
         <p><%= recipe.summary %></p>
-        <% if recipe.styles %>
+        <% if recipe.styles.any? %>
           <p>Style: <%= render recipe.styles %></p>
         <%end%>
-        <% if recipe.ingredients %>
+        <% if recipe.ingredients.any? %>
           <p>Ingredients: <%= render recipe.ingredients %></p>
         <%end%>
         <p>
