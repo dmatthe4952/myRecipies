@@ -3,6 +3,7 @@ class RecipesController < ApplicationController
   before_action :require_user, except: [:show, :index]
   before_action :require_user_like, only: [:like]
   before_action :require_same_user, only: [:edit, :update, :destroy]
+  before_action :admin_user, only: :destroy
   
   def new
     @recipe = Recipe.new
@@ -76,11 +77,14 @@ class RecipesController < ApplicationController
     end
     
     def require_user_like
-    if !current_user
-      flash[:danger] = "You must be logged in to perform that"
-      redirect_to :back
+      if !current_user
+        flash[:danger] = "You must be logged in to perform that"
+        redirect_to :back
+      end
     end
-  end
 
-    
+    def admin_user
+      redirect_to recipes_path unless current_user.admin?
+      
+    end
 end
