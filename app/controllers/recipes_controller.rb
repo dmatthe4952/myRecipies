@@ -35,10 +35,12 @@ class RecipesController < ApplicationController
   
   def show
     @recipe = Recipe.find(params[:id])
+    @recipe_reviews = @recipe.reviews.all.paginate(page: params[:page], per_page: 4)
+    @review = Review.new
   end
   
   def index
-    @recipes = Recipe.paginate(page: params[:page], per_page: 4)
+    @recipes = Recipe.paginate(page: params[:page], per_page: 3)
   end
   
   def destroy
@@ -85,6 +87,5 @@ class RecipesController < ApplicationController
 
     def admin_user
       redirect_to recipes_path unless current_user.admin?
-      
     end
 end

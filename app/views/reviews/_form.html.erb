@@ -1,0 +1,7 @@
+<span>
+<%= form_for @review do |f| %>
+  <%= f.text_field :body %>
+  <%=  f.hidden_field :recipe_id, :value => @recipe.id %>
+  <%= f.submit('Create Review', class: 'btn btn-success')%>
+<%end%>
+</span>

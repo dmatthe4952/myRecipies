@@ -7,13 +7,10 @@ class ChefsController  < ApplicationController
     @chef = Chef.new
   end
   
-  def index
-    @chefs = Chef.paginate(page: params[:page], per_page: 2)
-  end
   
   def create
     @chef = Chef.new(chef_params)
-    
+
     if @chef.save
       flash[:success] = "You were successfully registered!"
       session[:chef_id] = @chef.id
@@ -40,7 +37,10 @@ class ChefsController  < ApplicationController
     end
   end
 
-  
+   def index
+    @chefs = Chef.paginate(page: params[:page], per_page: 4)
+  end
+ 
   private
   
     def chef_params

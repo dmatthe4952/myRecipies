@@ -30,8 +30,8 @@
           <p>Ingredients: <%= render recipe.ingredients %></p>
         <%end%>
         <p>
-          <span class="quiet"><small><%= time_ago_in_words(recipe.created_at) %> ago</small></span>
-          <span class="quiet"><small><%= time_ago_in_words(recipe.updated_at) %> ago</small></span>
+          <span class="quiet"><small>Created: <%= time_ago_in_words(recipe.created_at) %> ago</small></span>
+          <span class="quiet"><small> -- Last Modified: <%= time_ago_in_words(recipe.updated_at) %> ago</small></span>
         </p>
         <div class="pull-right">
           <%= link_to like_recipe_path(recipe, like: true), method: :post do %>
