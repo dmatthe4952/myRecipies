@@ -18,16 +18,16 @@ gem 'bootstrap-will_paginate', '0.0.10'
 gem 'bcrypt', '~> 3.1.7'
 #gem 'bcrypt-ruby', '~> 3.1.2'
 gem 'fog', '1.36.0'
+gem 'sqlite3'
+
 
 gem 'spring',        group: :development
 
 group :development, :test do
-  gem 'sqlite3'
   gem 'pry'
   gem 'minitest'
 end
 
 group :production do
-  gem 'pg','~> 1.0.0'
   gem 'rails_12factor'
 end
