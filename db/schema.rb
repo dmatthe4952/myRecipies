@@ -13,22 +13,22 @@
 
 ActiveRecord::Schema.define(version: 20151031113904) do
 
-  create_table "chefs", force: true do |t|
-    t.string   "chefname"
-    t.string   "email"
+  create_table "chefs", force: :cascade do |t|
+    t.string   "chefname",        limit: 255
+    t.string   "email",           limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "password_digest"
-    t.boolean  "admin",           default: false
+    t.string   "password_digest", limit: 255
+    t.boolean  "admin",                       default: false
   end
 
-  create_table "ingredients", force: true do |t|
-    t.string   "name"
+  create_table "ingredients", force: :cascade do |t|
+    t.string   "name",       limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "likes", force: true do |t|
+  create_table "likes", force: :cascade do |t|
     t.boolean  "like"
     t.integer  "chef_id"
     t.integer  "recipe_id"
@@ -36,33 +36,33 @@ ActiveRecord::Schema.define(version: 20151031113904) do
     t.datetime "updated_at"
   end
 
-  create_table "recipe_ingredients", force: true do |t|
+  create_table "recipe_ingredients", force: :cascade do |t|
     t.integer  "recipe_id"
     t.integer  "ingredient_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "recipe_styles", force: true do |t|
+  create_table "recipe_styles", force: :cascade do |t|
     t.integer  "recipe_id"
     t.integer  "style_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "recipes", force: true do |t|
-    t.string   "name"
+  create_table "recipes", force: :cascade do |t|
+    t.string   "name",        limit: 255
     t.text     "summary"
     t.text     "description"
     t.integer  "chef_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "picture"
+    t.string   "picture",     limit: 255
   end
 
   add_index "recipes", ["chef_id"], name: "index_recipes_on_chef_id"
 
-  create_table "reviews", force: true do |t|
+  create_table "reviews", force: :cascade do |t|
     t.text     "body"
     t.integer  "chef_id"
     t.integer  "recipe_id"
@@ -73,8 +73,8 @@ ActiveRecord::Schema.define(version: 20151031113904) do
   add_index "reviews", ["chef_id"], name: "index_reviews_on_chef_id"
   add_index "reviews", ["recipe_id"], name: "index_reviews_on_recipe_id"
 
-  create_table "styles", force: true do |t|
-    t.string   "name"
+  create_table "styles", force: :cascade do |t|
+    t.string   "name",       limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
