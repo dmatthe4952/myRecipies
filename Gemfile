@@ -7,7 +7,7 @@ gem 'nokogiri', '>= 1.8.3'
 gem "actionview", ">= 4.2.7.1"
 gem "activejob", ">= 4.2.7.1"
 gem 'sass-rails', '~> 4.0.3'
-gem 'bootstrap-sass', '~> 3.3.5'
+gem 'bootstrap-sass', '~> 3.4.1'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
@@ -15,7 +15,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'carrierwave', '0.10.0'
-gem 'mini_magick', '3.8.0'
+gem 'mini_magick', '4.9.4'
 gem 'will_paginate', '3.0.7'
 gem 'bootstrap-will_paginate', '0.0.10'
 gem 'bcrypt', '~> 3.1.7'
