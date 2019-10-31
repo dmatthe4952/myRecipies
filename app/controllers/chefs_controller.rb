@@ -16,7 +16,7 @@ class ChefsController  < ApplicationController
       session[:chef_id] = @chef.id
       redirect_to recipes_path
     else
-      render :new
+      render :new, formats: [:html]
     end
   end
   
@@ -33,7 +33,7 @@ class ChefsController  < ApplicationController
       flash[:success] = "Your profile has been successfully updated"
       redirect_to show_chef_path
     else
-      render 'edit'
+      render 'edit', formats: [:html]
     end
   end
 

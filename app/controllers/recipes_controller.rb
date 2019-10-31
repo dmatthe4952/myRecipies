@@ -17,7 +17,7 @@ class RecipesController < ApplicationController
       flash[:success] = "Your recipe was successfully created!"
       redirect_to recipes_path
     else
-      render :new
+      render :new, formats: [:html]
     end
   end
   
@@ -29,7 +29,7 @@ class RecipesController < ApplicationController
     if @recipe.update(recipe_params)
       redirect_to chef_path(@recipe.chef)
     else
-      render 'edit'
+      render 'edit', formats: [:html]
     end
   end
   

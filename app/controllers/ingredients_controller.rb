@@ -17,7 +17,7 @@ class IngredientsController < ApplicationController
       flash[:success] = "Ingredient Added to available ingredients"
       redirect_to recipes_path
     else
-      render :new
+      render :new, formats: [:html]
     end
   end
   

@@ -17,7 +17,7 @@ class StylesController < ApplicationController
       flash[:success] = "New Style has been added"
       redirect_to recipes_path
     else
-      render :new
+      render :new, formats: [:html]
     end
   end
   

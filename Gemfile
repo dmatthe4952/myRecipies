@@ -3,6 +3,9 @@ ruby '2.2.2'
 
 
 gem 'rails', '4.2.7.1'
+gem 'nokogiri', '>= 1.8.3'
+gem "actionview", ">= 4.2.7.1"
+gem "activejob", ">= 4.2.7.1"
 gem 'sass-rails', '~> 4.0.3'
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'uglifier', '>= 1.3.0'
